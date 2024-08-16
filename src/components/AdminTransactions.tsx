@@ -51,6 +51,10 @@ function AdminTransactions() {
     return <Fallback />;
   }
 
+  if(isError){
+    toast.error("Error Occured")
+  }
+
   if (isSuccess) {
     return (
       <>

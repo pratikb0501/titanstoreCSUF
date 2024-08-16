@@ -1,13 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import axios from "axios";
 import {
   AllCouponsResponse,
   CouponPayload,
   DeleteCouponPayload,
   DeleteCouponResponse,
-  NewCouponResponse,
-  verifyCouponResponse,
+  NewCouponResponse
 } from "./couponTypes";
-import axios from "axios";
 
 export const couponApi = createApi({
   reducerPath: "couponApi",
@@ -48,7 +47,7 @@ export const couponApi = createApi({
 
 export const verifyCoupon = async (couponCode: string) => {
   try {
-    const {data} = await axios.get(
+    const { data } = await axios.get(
       `${
         import.meta.env.VITE_API_SERVER_URL
       }/payment/discount?couponCode=${couponCode}`

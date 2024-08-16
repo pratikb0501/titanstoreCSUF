@@ -1,18 +1,17 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import {
   useDeleteProductMutation,
-  useGetAdminProductsQuery,
-  useGetAllProductsQuery,
+  useGetAdminProductsQuery
 } from "../redux/reducers/product/productApi";
-import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 import {
   DeleteProductResponse,
   ProductResponse,
 } from "../redux/reducers/product/productTypes";
-import { useState } from "react";
-import UpdateProduct from "./UpdateProduct";
+import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 import Fallback from "./Fallback";
+import UpdateProduct from "./UpdateProduct";
 
 function AdminProductsList() {
   const adminId = useSelector(
@@ -24,10 +23,9 @@ function AdminProductsList() {
     isLoading,
     isSuccess,
     isError,
-    error,
   } = useGetAdminProductsQuery();
 
-  const [deleteProductById, { isSuccess: isDeleteSuccess }] =
+  const [deleteProductById] =
     useDeleteProductMutation();
   const [isUpdate, setIsUpdate] = useState(false);
   const [currentProduct, setCurrentProduct] = useState<ProductResponse | null>(

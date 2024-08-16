@@ -1,10 +1,7 @@
-import { toast } from "react-toastify";
-import { useGetAllProductsQuery } from "../redux/reducers/product/productApi";
-import ProductCard from "./ProductCard";
 import {
-  ProductResponse,
-  SearchProductsResponse,
+  ProductResponse
 } from "../redux/reducers/product/productTypes";
+import ProductCard from "./ProductCard";
 const ListAllProducts = ({
   productsPerRow,
   productsList,

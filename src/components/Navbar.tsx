@@ -10,7 +10,7 @@ function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   // const paths = new Set(["/login"])
-  const { user, loading } = useSelector(
+  const { user } = useSelector(
     (state: { userReducer: UserReducerInitState }) => state.userReducer
   );
   const { cartItems } = useSelector(
@@ -20,7 +20,7 @@ function Navbar() {
 
   const logoutHandler = async () => {
     try {
-      const signout = await signOut(auth);
+      await signOut(auth);
       toast.success("Signed Out Successfully");
       navigate('/login')
     } catch (error) {

@@ -7,11 +7,9 @@ import {
   useGetAllCouponsQuery,
 } from "../redux/reducers/coupon/couponApi";
 import {
-  CouponErrorResponse,
   CouponPayload,
-  CouponResponse,
   DeleteCouponResponse,
-  NewCouponResponse,
+  NewCouponResponse
 } from "../redux/reducers/coupon/couponTypes";
 import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 import Fallback from "./Fallback";
@@ -29,7 +27,7 @@ function AdminCoupon() {
     isError,
     isSuccess,
   } = useGetAllCouponsQuery(adminId!);
-  const[allCouponsList,setAllCouponsList] = useState<CouponResponse[]>();
+  // const[allCouponsList,setAllCouponsList] = useState<CouponResponse[]>();
   const [couponName, setCouponName] = useState<string>("");
   const [couponAmount, setCouponAmount] = useState<number>(0);
 
