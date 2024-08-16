@@ -1,7 +1,7 @@
 import {
   ProductResponse
 } from "../redux/reducers/product/productTypes";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard" ;
 const ListAllProducts = ({
   productsPerRow,
   productsList,
