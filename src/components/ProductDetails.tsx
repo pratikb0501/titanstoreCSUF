@@ -86,7 +86,7 @@ function ProductDetails() {
             <div className="product-name">{product?.name}</div>
             <div className="product-desp">{product?.description}</div>
             <div className="product-price">$ {product?.price}</div>
-            {user?.role === "user" && (
+            {user?.role != "admin" && (
               <div className="cart">
                 <button
                   className="cart-btn"
