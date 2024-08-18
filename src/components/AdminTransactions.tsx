@@ -1,6 +1,8 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import viewLogo from "../assets/view.svg";
 import {
   useAllOrdersQuery,
   useUpdateOrderStatusMutation,
@@ -8,7 +10,6 @@ import {
 import { OrderResponse } from "../redux/reducers/order/orderTypes";
 import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 import Fallback from "./Fallback";
-import { toast } from "react-toastify";
 
 function AdminTransactions() {
   const adminId = useSelector(
@@ -51,8 +52,8 @@ function AdminTransactions() {
     return <Fallback />;
   }
 
-  if(isError){
-    toast.error("Error Occured")
+  if (isError) {
+    toast.error("Error Occured");
   }
 
   if (isSuccess) {
@@ -96,7 +97,7 @@ function AdminTransactions() {
                         <td>
                           <p className="delete-td">
                             <img
-                              src="/src/assets/view.svg"
+                              src={viewLogo}
                               alt="delete"
                               title="View Details"
                               onClick={() => viewDetails(t)}

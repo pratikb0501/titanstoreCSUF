@@ -8,6 +8,7 @@ import {
 } from "../redux/reducers/product/productTypes";
 import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 import { useUpdateProductMutation } from "../redux/reducers/product/productApi";
+import noImagePlaceholder from "../assets/no_image.svg"
 
 function UpdateProduct({
   productDetails,
@@ -79,7 +80,7 @@ function UpdateProduct({
           {productImage || productImageURL ? (
             <img src={productImageURL} alt="product_image" />
           ) : (
-            <img src="/src/assets/no_image.svg" alt="product_image" />
+            <img src={noImagePlaceholder} alt="product_image" />
           )}
         </div>
         <div className="product-details">

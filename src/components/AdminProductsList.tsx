@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import deleteLogo from "../assets/delete.svg";
+import editLogo from "../assets/edit.svg";
 import {
   useDeleteProductMutation,
-  useGetAdminProductsQuery
+  useGetAdminProductsQuery,
 } from "../redux/reducers/product/productApi";
 import {
   DeleteProductResponse,
@@ -25,8 +27,7 @@ function AdminProductsList() {
     isError,
   } = useGetAdminProductsQuery();
 
-  const [deleteProductById] =
-    useDeleteProductMutation();
+  const [deleteProductById] = useDeleteProductMutation();
   const [isUpdate, setIsUpdate] = useState(false);
   const [currentProduct, setCurrentProduct] = useState<ProductResponse | null>(
     null
@@ -95,7 +96,7 @@ function AdminProductsList() {
                       <div className="manage-div">
                         <p className="edit-td">
                           <img
-                            src="/src/assets/edit.svg"
+                            src={editLogo}
                             alt="edit"
                             title="edit product"
                             onClick={() => UpdateProductById(product)}
@@ -103,7 +104,7 @@ function AdminProductsList() {
                         </p>
                         <p className="delete-td">
                           <img
-                            src="/src/assets/delete.svg"
+                            src={deleteLogo}
                             alt="delete"
                             title="delete product"
                             onClick={() => deleteProduct(product?._id)}
@@ -120,7 +121,11 @@ function AdminProductsList() {
       );
     } else {
       return (
-        <UpdateProduct productDetails={currentProduct} setIsUpdate={setIsUpdate} isUpdate />
+        <UpdateProduct
+          productDetails={currentProduct}
+          setIsUpdate={setIsUpdate}
+          isUpdate
+        />
       );
     }
   }

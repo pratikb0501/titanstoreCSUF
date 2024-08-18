@@ -1,11 +1,12 @@
 import { FormEvent, useState } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import noImage from "../assets/no_image.svg";
 import { useAddNewProductMutation } from "../redux/reducers/product/productApi";
-import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 import { DeleteProductResponse } from "../redux/reducers/product/productTypes";
+import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 
-function AddNewProduct({changeTab}:{changeTab:Function}) {
+function AddNewProduct({ changeTab }: { changeTab: Function }) {
   const [newProduct] = useAddNewProductMutation();
   const [productName, setproductName] = useState<string>("");
   const [productDesp, setproductDesp] = useState<string>("");
@@ -24,7 +25,7 @@ function AddNewProduct({changeTab}:{changeTab:Function}) {
 
   const createNewProduct = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(!adminId) return;
+    if (!adminId) return;
     const payload = {
       name: productName,
       category: productCategory!,
@@ -35,11 +36,11 @@ function AddNewProduct({changeTab}:{changeTab:Function}) {
       adminId,
     };
     try {
-      const res:DeleteProductResponse = await newProduct(payload).unwrap();
-      if(res.success){
+      const res: DeleteProductResponse = await newProduct(payload).unwrap();
+      if (res.success) {
         changeTab("all");
         toast.success(res.message);
-      };
+      }
     } catch (error) {
       toast.error("Failed ! Please Try Again");
     }
@@ -53,7 +54,7 @@ function AddNewProduct({changeTab}:{changeTab:Function}) {
           {productImage ? (
             <img src={productImageURL} alt="product_image" />
           ) : (
-            <img src="/src/assets/no_image.svg" alt="product_image" />
+            <img src={noImage} alt="product_image" />
           )}
         </div>
         <div className="product-details">

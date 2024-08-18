@@ -15,6 +15,7 @@ import {
 import { verifyCoupon } from "../redux/reducers/coupon/couponApi";
 import { verifyCouponResponse } from "../redux/reducers/coupon/couponTypes";
 import { Link, useNavigate } from "react-router-dom";
+import deleteLogo from "../assets/delete.svg";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -148,7 +149,7 @@ function Cart() {
               </div>
               <div className="delete-product">
                 <img
-                  src="/src/assets/delete.svg"
+                  src={deleteLogo}
                   alt=""
                   onClick={() => deleteItem(item.productId)}
                 />

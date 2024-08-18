@@ -1,10 +1,11 @@
+import spinningWheel from "../assets/loading.svg";
 
 function Fallback() {
   return (
     <div className="fallback">
-      <img src="/src/assets/loading.svg" alt="loader" />
+      <img src={spinningWheel} alt="loader" />
     </div>
-  )
+  );
 }
 
-export default Fallback
+export default Fallback;

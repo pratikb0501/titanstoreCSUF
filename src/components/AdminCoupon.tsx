@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import deleteLogo from "../assets/delete.svg";
 import {
   useCreateNewCouponMutation,
   useDeleteCouponMutation,
@@ -9,7 +10,7 @@ import {
 import {
   CouponPayload,
   DeleteCouponResponse,
-  NewCouponResponse
+  NewCouponResponse,
 } from "../redux/reducers/coupon/couponTypes";
 import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 import Fallback from "./Fallback";
@@ -130,7 +131,7 @@ function AdminCoupon() {
           </form>
         </div>
         <div className="display-coupon">
-          {!(coupons.length) ? (
+          {!coupons.length ? (
             <div className="no-coupons">
               <h1>No coupons</h1>
             </div>
@@ -151,7 +152,7 @@ function AdminCoupon() {
                     <td>
                       <p className="delete-td">
                         <img
-                          src="/src/assets/delete.svg"
+                          src={deleteLogo}
                           alt="delete"
                           title="delete coupon"
                           onClick={() => delCoupon(coupon._id)}

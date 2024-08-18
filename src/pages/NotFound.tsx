@@ -1,8 +1,10 @@
+import notFound from "../assets/404.png";
+
 function NotFound() {
   return (
     <section className="notfound-error">
       <p>
-        <img src="/src/assets/404.png" alt="404_Image" />
+        <img src={notFound} alt="404_Image" />
       </p>
     </section>
   );

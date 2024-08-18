@@ -1,26 +1,27 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import google from "../assets/google_logo.svg";
 import { auth } from "../components/Firebase";
 import { useCreateNewUserMutation } from "../redux/reducers/user/userApi";
 import { UserReducerInitState } from "../redux/reducers/user/userTypes";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [createUser] = useCreateNewUserMutation();
   const { user } = useSelector(
     (state: { userReducer: UserReducerInitState }) => state.userReducer
   );
-  
-  useEffect(()=>{
-    if(user){
-      navigate('/');
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
     }
-  },[user])
+  }, [user]);
 
   const handleLogin = async () => {
     try {
@@ -36,7 +37,7 @@ function Login() {
         role: "user",
       }).unwrap();
       toast.success(response.message);
-      navigate('/');
+      navigate("/");
     } catch (error) {
       if (error) {
         toast.error("Fail to Sign In");
@@ -98,10 +99,12 @@ function Login() {
         <button className="google-btn" onClick={handleLogin}>
           Sign-in using{" "}
           <span>
-            <img src="src/assets/google_logo.svg" alt="google_logo" />
+            <img src={google} alt="google_logo" />
           </span>
         </button>
-        <p className="tip">Enter details if you are logging for the first time</p>
+        <p className="tip">
+          Enter details if you are logging for the first time
+        </p>
       </div>
     </section>
   );
