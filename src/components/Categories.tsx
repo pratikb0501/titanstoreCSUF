@@ -1,46 +1,54 @@
 import { Link } from "react-router-dom";
+import allproducts from "../assets/categories/allproducts.jpg";
+import electronics from "../assets/categories/electronics.jpeg";
+import frame from "../assets/categories/frame.jpg";
+import jacket from "../assets/categories/jacket.png";
+import jersey from "../assets/categories/jersey.jpg";
+import merch from "../assets/categories/merch.jpg";
+import sweatshirt from "../assets/categories/sweatshirt.jpg";
+import tshirt from "../assets/categories/tshirt.jpg";
 
 const categoryList = [
   {
     category: "All Products",
-    imagePath: "src/assets/categories/allproducts.jpg",
+    imagePath: allproducts,
     routeTo: "/products/all",
   },
   {
     category: "T-shirts",
-    imagePath: "src/assets/categories/tshirt.jpg",
+    imagePath: tshirt,
     routeTo: "/products/tshirts",
   },
   {
     category: "Sweatshirts",
-    imagePath: "src/assets/categories/sweatshirt.jpg",
+    imagePath: sweatshirt,
     routeTo: "/products/sweatshirts",
   },
   {
     category: "Jackets",
-    imagePath: "src/assets/categories/jacket.png",
+    imagePath: jacket,
     routeTo: "/products/jackets",
   },
   {
     category: "Merchandise",
-    imagePath: "src/assets/categories/merch.jpg",
+    imagePath: merch,
     routeTo: "/products/merchandise",
   },
   {
     category: "Electronics",
-    imagePath: "src/assets/categories/electronics.jpeg",
+    imagePath: electronics,
     routeTo: "/products/electronics",
   },
   {
     category: "Frames",
-    imagePath: "src/assets/categories/frame.jpg",
+    imagePath: frame,
     routeTo: "/products/frames",
   },
   {
     category: "Jerseys",
-    imagePath: "src/assets/categories/jersey.jpg",
+    imagePath: jersey,
     routeTo: "/products/jerseys",
-  }
+  },
 ];
 
 function Categories() {

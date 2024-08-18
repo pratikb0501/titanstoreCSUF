@@ -2,6 +2,8 @@ import { signOut } from "firebase/auth";
 import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import cart from "../assets/cart.svg";
+import titanLogo from "../assets/logo.svg";
 import { CartReducerInitialState } from "../redux/reducers/cart/cartTypes";
 import { UserReducerInitState } from "../redux/reducers/user/userTypes";
 import { auth } from "./Firebase";
@@ -17,12 +19,11 @@ function Navbar() {
     (state: { cartReducer: CartReducerInitialState }) => state.cartReducer
   );
 
-
   const logoutHandler = async () => {
     try {
       await signOut(auth);
       toast.success("Signed Out Successfully");
-      navigate('/login')
+      navigate("/login");
     } catch (error) {
       toast.error("Failed to Sign out");
     }
@@ -32,7 +33,7 @@ function Navbar() {
     <nav className="navbar">
       <Link to="/">
         <div className="nav-left">
-          <img src="/src/assets/logo.svg" alt="titan_logo" />
+          <img src={titanLogo} alt="titan_logo" />
         </div>
       </Link>
       <div className="nav-right">
@@ -43,11 +44,7 @@ function Navbar() {
                 <div>{cartItems.length > 10 ? "10+" : cartItems.length}</div>
               </div>
             )}
-            <img
-              src="/src/assets/cart.svg"
-              className="cart-img"
-              alt="cart_logo"
-            />
+            <img src={cart} className="cart-img" alt="cart_logo" />
           </div>
         </Link>
         <Link to="/login">

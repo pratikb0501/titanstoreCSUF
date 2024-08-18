@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import leftArrow from "../assets/leftarrow.svg";
+import rightArrow from "../assets/rightarrow.svg";
 import uscape from "../assets/uscape.png";
 import vintage from "../assets/vintage.png";
 
@@ -8,8 +10,6 @@ interface CaraouselImage {
   name: string;
   path: string;
 }
-
-// const rootPath: string = "src/assets/";
 
 const imagesList: CaraouselImage[] = [
   {
@@ -23,9 +23,6 @@ const imagesList: CaraouselImage[] = [
     path: "/products/vintage",
   },
 ];
-
-const rArrowPath: string = "/src/assets/rightArrow.svg";
-const lArrowPath: string = "/src/assets/leftArrow.svg";
 
 function Caraousel() {
   const [slide, setSlide] = useState(0);
@@ -51,7 +48,7 @@ function Caraousel() {
     <section className="caraousal">
       <span>
         <img
-          src={`${lArrowPath}`}
+          src={`${leftArrow}`}
           className="arrow left-arrow"
           onClick={() => handleClick("left")}
           alt="left-arrow"
@@ -78,7 +75,7 @@ function Caraousel() {
       })}
       <span>
         <img
-          src={`${rArrowPath}`}
+          src={`${rightArrow}`}
           className="arrow right-arrow"
           onClick={() => handleClick("right")}
           alt="right-arrow"
