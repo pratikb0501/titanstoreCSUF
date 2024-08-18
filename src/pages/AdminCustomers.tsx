@@ -3,6 +3,7 @@ import { User, UserReducerInitState } from "../redux/reducers/user/userTypes";
 import { useGetAllUsersQuery } from "../redux/reducers/user/userApi";
 import { useEffect, useState } from "react";
 import { skipToken } from "@reduxjs/toolkit/query";
+import deleteIcon from "../assets/delete.svg"
 
 function AdminCustomers() {
   const adminId = useSelector(
@@ -57,7 +58,7 @@ function AdminCustomers() {
                   {user.role === "user" && 
                     <p className="delete-td">
                       <img
-                        src="/src/assets/delete.svg"
+                        src={deleteIcon}
                         alt="delete"
                         title="delete user"
                       />
