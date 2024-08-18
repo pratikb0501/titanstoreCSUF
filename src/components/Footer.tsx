@@ -1,3 +1,5 @@
+import linkedIn from "../assets/linkedin.png"
+
 function Footer({title,subtitle,link}:{
   title:string;
   subtitle:string;
@@ -9,7 +11,7 @@ function Footer({title,subtitle,link}:{
       <div className="footer-row2">
         <a href={link} target="_blank">
           {subtitle}
-          <img src="/src/assets/linkedin.png" alt="linkedIn" />
+          <img src={linkedIn} alt="linkedIn" />
         </a>
       </div>
     </section>
