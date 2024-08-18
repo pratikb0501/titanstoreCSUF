@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import uscape from "../assets/uscape.png";
+import vintage from "../assets/vintage.png";
 
 interface CaraouselImage {
   id: number;
@@ -7,17 +9,17 @@ interface CaraouselImage {
   path: string;
 }
 
-const rootPath: string = "src/assets/";
+// const rootPath: string = "src/assets/";
 
 const imagesList: CaraouselImage[] = [
   {
     id: 1,
-    name: "uscape.png",
+    name: uscape,
     path: "/products/uscape",
   },
   {
     id: 2,
-    name: "vintage.png",
+    name: vintage,
     path: "/products/vintage",
   },
 ];
@@ -65,7 +67,7 @@ function Caraousel() {
               {slide == index && (
                 <img
                   key={image.id}
-                  src={`${rootPath}${image.name}`}
+                  src={`${image.name}`}
                   alt={image.name}
                   className="active-img"
                 />
