@@ -17,6 +17,10 @@ body {
   user-select: none;
 }
 
+a{
+  text-decoration: inherit;
+}
+
 @mixin my-flex($align: center, $justify: center, $direction: row) {
   display: flex;
   align-items: $align;
@@ -1000,6 +1004,12 @@ body {
         font-size: 1.4rem;
         width: 100px;
         @include my-flex();
+      }
+      .outOfStock{
+        @include my-flex();
+        height: 100%;
+        margin: 0 0 0 1rem;
+        color:red
       }
       button {
         padding: 0.8rem;

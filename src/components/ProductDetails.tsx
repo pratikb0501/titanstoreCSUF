@@ -103,6 +103,11 @@ function ProductDetails() {
                 >
                   +
                 </button>
+                {
+                  product?.stock == 0 && (
+                    <div className="outOfStock">Out of stock</div>
+                  )
+                }
               </div>
             )}
           </div>
