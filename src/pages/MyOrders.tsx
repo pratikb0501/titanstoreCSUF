@@ -12,7 +12,9 @@ function MyOrders() {
   const { user } = useSelector(
     (state: { userReducer: UserReducerInitState }) => state.userReducer
   );
-  const { data,isLoading,isSuccess,isError } = useMyOrdersQuery(user?._id! ? user._id : skipToken);
+  const { data, isLoading, isSuccess, isError } = useMyOrdersQuery(
+    user?._id! ? user._id : skipToken
+  );
   const [myOrders, setMyOrders] = useState<OrderResponse[]>([]);
 
   // useEffect(()=>{
@@ -27,15 +29,15 @@ function MyOrders() {
     }
   }, [data]);
 
-  if(isLoading){
-    return <Fallback />
+  if (isLoading) {
+    return <Fallback />;
   }
 
-  if(isError){
-    toast.error("Error occured")
+  if (isError) {
+    toast.error("Error occured");
   }
 
-  if(isSuccess){
+  if (isSuccess) {
     return (
       <section className="myOrders-container">
         <div className="myOrders-title">
@@ -51,6 +53,7 @@ function MyOrders() {
                 <th>Tax</th>
                 <th>Discount</th>
                 <th>Total</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -67,7 +70,12 @@ function MyOrders() {
                         return (
                           <tr>
                             <td className="myOrder-img">
-                              <img src={`${import.meta.env.VITE_API_SERVER_PHOTO_URL}/${item.photo}`} alt={item.name} />
+                              <img
+                                src={`${
+                                  import.meta.env.VITE_API_SERVER_PHOTO_URL
+                                }/${item.photo}`}
+                                alt={item.name}
+                              />
                             </td>
                             <td>{item.name}</td>
                           </tr>
@@ -78,6 +86,7 @@ function MyOrders() {
                     <td>$ {order.tax}</td>
                     <td>$ {order.discount}</td>
                     <td>$ {order.total}</td>
+                    <td className={order.status}>{order.status}</td>
                   </tr>
                 );
               })}
@@ -87,7 +96,6 @@ function MyOrders() {
       </section>
     );
   }
-
 }
 
 export default MyOrders;
