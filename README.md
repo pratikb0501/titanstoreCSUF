@@ -1,30 +1,16 @@
-# React + TypeScript + Vite
+# Screenshots
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Homepage
+![Screenshot 2025-02-11 100539](https://github.com/user-attachments/assets/ce876b7a-0022-4d0b-93ca-40be1eaea67d)
+![Screenshot 2025-02-11 100650](https://github.com/user-attachments/assets/576ba423-d154-4ad0-b6f2-95306be879c6)
+![Screenshot 2025-02-11 100747](https://github.com/user-attachments/assets/d71ab714-ba80-48b7-a586-f17e43f789ff)
 
-Currently, two official plugins are available:
+## Login
+![Screenshot 2025-02-11 100924](https://github.com/user-attachments/assets/7eab5f00-e5ea-4848-95ad-82e5234e13f1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Admin Dashboard
+### Customers
+<img width="946" alt="Screenshot 2025-02-11 101447" src="https://github.com/user-attachments/assets/569d6202-896f-4bb9-a83e-0483b650e0e1" />
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Transactions
+<img width="944" alt="Screenshot 2025-02-11 101822" src="https://github.com/user-attachments/assets/28417468-de2f-436d-ab1a-26bdf53ffcbd" />
