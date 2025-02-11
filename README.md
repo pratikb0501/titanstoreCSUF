@@ -8,7 +8,7 @@
 ## Login
 ![Screenshot 2025-02-11 100924](https://github.com/user-attachments/assets/7eab5f00-e5ea-4848-95ad-82e5234e13f1)
 
-## Admin Dashboard
+# Admin Dashboard
 
 ### All Products
 ![Screenshot 2025-02-11 101128](https://github.com/user-attachments/assets/e5db25bd-17e4-4235-b056-a4ccf5bf37b4)
@@ -38,6 +38,23 @@
 ![image](https://github.com/user-attachments/assets/1fadf741-96bc-4149-b48d-e08a233ce1b2)
 ![image](https://github.com/user-attachments/assets/85f53201-2326-4df4-8e2f-9a07f5ed3d31)
 
+# Customer Dashboard
+
+## All Products
+![image](https://github.com/user-attachments/assets/01e2e82c-56b7-4e7d-85ec-7fd00362c27a)
+
+## Product Details
+![image](https://github.com/user-attachments/assets/ed5e9caa-f935-407d-9d8d-58a95ea17498)
+
+## Cart
+![image](https://github.com/user-attachments/assets/355584dc-6514-4f36-ae93-314c085c9def)
+
+## Shipping Address
+![image](https://github.com/user-attachments/assets/9f266245-2261-4eb4-bc11-2594c2cb9c6c)
 
 ## Payment
 ![image](https://github.com/user-attachments/assets/005d208e-bcdd-4c55-8667-755e8b559368)
+
+## My Orders
+![image](https://github.com/user-attachments/assets/e2c42cfe-ea3b-4ebd-8e24-027966d7733d)
+
